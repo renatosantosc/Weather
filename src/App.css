@@ -1,38 +1,260 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+}
+.back-day, .back-night{
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.back-day{
+  background-image: url("img/Dia.jpg");
+}
+.back-night{
+  background-image: url("img/noite2.jpg");
+}
+.Container{
+  width: 45%;
+  padding: 10px;
+  border-radius: 5px;
   text-align: center;
+  box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.445);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.back-day .Container{
+  background-color: rgb(40, 151, 255);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.back-night .Container{
+  background-color: rgb(21, 67, 107);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search{
+  width: 100%;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.search #title{
+  font-size: 1.3rem;
+}
+.search hr{
+  width: 80%;
+  margin-top: 3%;
+  color: #fff;
+}
+.search .search-input{
+  width: 90%;
+  display: grid;
+  grid-template-columns: 80% auto;
+  gap: 5px;
+}
+.search .search-input input, button{
+  padding: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.search span{
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  margin-bottom: 4%;
+  color: #fff;
+  letter-spacing: 1.1px;
+}
+.search .search-input button{
+  background-color: rgb(32, 105, 173);
+  cursor: pointer;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.search .search-input button:disabled,.search .search-input button:hover:disabled{
+  background-color:gray;
+  border-color: gray;
+}
+.search .search-input button:hover{
+  background-color: rgb(88, 174, 255);
+}
+.location{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 25px;
+}
+.location span{
+  font-size: 1.4rem;
+  margin-right: 15px;
+  color: #fff;
+}
+.location i{
+  color: #fff;
+  margin-right: 5px;
+}
+.search .climate{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+.climate .temperature{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.climate .temperature label{
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+.climate .temperature span, .search .wind-cloud .wind span, .search .wind-cloud .cloud span{
+  font-weight: 100;
+  font-size: 1rem;
+}
+.climate .temperature #grau{
+  font-size: 1.3rem;
+  margin-left: 4px;
+}
+.climate .climate-icon img{
+  width: 175%;
+  background-color: #bebebe;
+  border-radius: 50%;
+}
+.search .wind-cloud{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 30px;
+  font-size: 1.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: #fff;
+  align-items: center;
+}
+.search .wind-cloud .wind, .cloud{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.search .wind-cloud .wind span, .cloud span{
+  margin-top: 4%;
+}
+.search .wind-cloud .wind label, .cloud label{
+  padding: 5px;
+}
+.search .wind-cloud .wind i, .cloud i{
+  margin-right: 2%;
+}
+.loadingBack{
+  background-image: linear-gradient(120deg, rgb(129, 200, 241), rgb(13, 13, 66));
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.loadingBack span, label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+.loadingBack span{
+  font-size: 5rem;
+  color: orange;
+}
+.loadingBack label{
+  font-size: 3.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.loading{
+  margin-top: 20px;
+}
+.container-Error{
+  position: absolute;
+  top: 50px;
+  width: 40%;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: red;
+  color: #fff;
+  animation: error;
+  animation-duration: 1s;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@keyframes error{
+  0%{
+    top: -1%;
+  }
+  100%{
+    top: 50px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(max-width:1000px){
+  .search #title{
+    font-size: 1.1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .Container{
+    width: 65%;
+  }
+}
+@media(max-width: 780px){
+  .climate .temperature span, .search .wind-cloud .wind span, .search .wind-cloud .cloud span{
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .container-Error{
+    width: 65%;
+  }
+}
+@media(max-width: 450px){
+  .Container{
+    width: 80%;
+  }
+  .climate .climate-icon img{
+    width: 120%;
+  }
+  .climate .temperature #grau{
+    font-weight: 600;
+  }
+  .climate{
+    margin-top: 15px;
+  }
+  .search .wind-cloud .wind label, .search .wind-cloud .cloud label{
+    font-size: 1.1rem;
+  }
+  .search .wind-cloud .wind span, .search .wind-cloud .cloud span{
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+  .container-Error{
+    width: 75%;
+  }
+}
+@media (max-width: 920px) and (max-height: 420px){
+  .Container{
+    width: 60%;
+    margin: 1% 0 5px 0;
+  }
+  .back-day, .back-night{
+    height: 450px;
+  }
+  .climate .temperature span, .search .wind-cloud .wind span, .search .wind-cloud .cloud span{
+    font-weight: 600;
+    font-size: 0.9rem;
   }
 }
