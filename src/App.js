@@ -40,7 +40,7 @@ const handleChange = e =>{
 const search = async () =>{
     setLoading(true)
 
-    await axios.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&lang=pt&appid=yourToken")
+    await axios.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&lang=pt&appid=198055475ddb9fecdf52fd52477e529b")
     .then((response)=>{
       setLoading(false)
       setDataCity(response.data)
