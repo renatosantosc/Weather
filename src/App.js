@@ -154,6 +154,9 @@ const search = async () =>{
             : '' }
           </div>
         </div>
+        <div className='link-favicon'>
+          <a target="blank" href="https://icons8.com/icon/hRvc4cHKHpnU/weather">Weather</a> icon by <a target="blank" href="https://icons8.com">Icons8</a>
+        </div>
       </div>
       }
       </>
