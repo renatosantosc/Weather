@@ -195,6 +195,29 @@
   font-weight: 600;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.link-favicon{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 10px 9px 25px black;
+  color: #252525;
+  border-radius: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.link-favicon a{
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(0, 110, 255);
+  transition: all 0.3s;
+}
+.link-favicon a:hover{
+  color: rgb(30, 30, 190);
+  transition: all 0.3s;
+}
 @keyframes error{
   0%{
     top: -1%;
@@ -219,6 +242,9 @@
   }
   .container-Error{
     width: 65%;
+  }
+  .climate .climate-icon img{
+    width: 150%;
   }
 }
 @media(max-width: 450px){
@@ -256,5 +282,10 @@
   .climate .temperature span, .search .wind-cloud .wind span, .search .wind-cloud .cloud span{
     font-weight: 600;
     font-size: 0.9rem;
+  }
+  .link-favicon{
+    padding: 7px;
+    bottom: 92vh;
+    font-size: 0.5rem;
   }
 }
